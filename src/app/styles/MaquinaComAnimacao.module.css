@@ -1,0 +1,63 @@
+.wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .foto {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .animacao {
+    position: absolute;
+    left: 25%;
+    bottom: 35%;
+    pointer-events: none;
+  }
+
+  .animacao2 {
+    position: absolute;
+    left: 29%;
+    bottom: 45%;
+    pointer-events: none;
+  }
+
+  .animacao3 {
+    position: absolute;
+    left: 19%;
+    bottom: 40%;
+    pointer-events: none;
+  }
+
+  .animacao4 {
+    position: absolute;
+    left: 19%;
+    bottom: 40%;
+    pointer-events: none;
+  }
+  
+  .letra {
+    position: absolute;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+    animation: subir 3s ease-in infinite;
+  }
+  
+  @keyframes subir {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  @media (min-height: 600px) and (min-width: 787px) {
+    .foto {
+      width: 400px;
+    }
+
+}

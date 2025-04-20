@@ -79,7 +79,7 @@
 /* RESPONSIVO */
 @media (max-width: 787px) {
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     margin: 0 1rem;
   }
@@ -88,7 +88,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     max-width: 100%;
   }
@@ -105,7 +105,7 @@
   }
 
   .conteinerMenuAspas {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 
@@ -114,7 +114,7 @@
   }
 
   .aspas2 {
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   .foto {
