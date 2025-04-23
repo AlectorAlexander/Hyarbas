@@ -1,16 +1,24 @@
 .versos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background-color: #2B2B2B;
-  padding: 1rem;
-  box-sizing: border-box;
-  overflow: hidden;
+  background-color: #1c1c1c;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
 }
 
-.versoImage {
-  max-width: 90vw !important;
-  max-height: 90vh;
-  object-fit: contain;
+.texto {
+  font-size: 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .texto {
+    font-size: 1.5rem;
+  }
 }

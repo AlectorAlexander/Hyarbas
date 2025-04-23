@@ -3,6 +3,8 @@
 
 import VersoIntro from '@/app/home/VersoIntro';
 import HomeIndex from '@/app/home/HomeIndex';
+import 'animate.css';
+import Sinopses from './components/Sinopses';
 
 
 export default function Page() {
@@ -10,6 +12,7 @@ export default function Page() {
     <>
       <VersoIntro />
       <HomeIndex  />
+      <Sinopses />
     </>
   );
 }

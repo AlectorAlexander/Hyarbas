@@ -2,14 +2,29 @@
 import { useEffect, useState } from 'react';
 import MaquinaComAnimacao from '../components/MaquinaComAnimacao';
 import styles from '../styles/homeindex.module.css';
+import ModalSinopses from '../components/Sinopses';
 
 export default function HomeIndex() {
   const [widthSize, setWidthSize] = useState(0);
   const [firstAspas, setFirstAspas] = useState("/aspas _Prancheta 1.png");
   const [secondAspas, setSecondAspas] = useState("/aspas -02.png");
+  const [modalAberto, setModalAberto] = useState(false)
+  useEffect(() => {
+    const handleResize = () => {
+        setWidthSize(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, [])
 
   useEffect(() => {
-      if (widthSize < 538) {
+      if (widthSize < 830) {
           setFirstAspas("/aspas -02.png");
           setSecondAspas("/aspas _Prancheta 1.png");
       } else {
@@ -17,18 +32,6 @@ export default function HomeIndex() {
           setSecondAspas("/aspas -02.png");
       }
   }, [widthSize]);
-
-  useEffect(() => {
-      const handleResize = () => {
-          setWidthSize(window.innerWidth);
-      };
-
-      window.addEventListener('resize', handleResize);
-
-      return () => {
-          window.removeEventListener('resize', handleResize);
-      };
-  }, [])
 
 
   return (
@@ -39,11 +42,10 @@ export default function HomeIndex() {
         <div className={styles.conteinerMenuAspas}>
         <img className={styles.aspas} src={firstAspas} alt="aspas imagem" layout="responsive" />
         <nav className={styles.menu}>
-          <a href="#sinopses">Sinopses</a>
           <a href="#pronunciamento">Pronunciamento</a>
           <a href="#depoimento">Depoimento</a>
           <a href="#criticas">Críticas Literárias</a>
-          <a href="#amazon">Obras na Amazon</a>
+          <a onClick={() => setModalAberto(true)}>Sinopses e Obras na Amazon</a>
         </nav>
         </div>
       </div>
@@ -52,6 +54,7 @@ export default function HomeIndex() {
         <img className={styles.aspas2} src={secondAspas} alt="aspas imagem" layout="responsive" />
 
       </div>
+      <ModalSinopses isOpen={modalAberto} onClose={() => setModalAberto(false)} />
     </section>
   );
 }

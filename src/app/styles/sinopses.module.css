@@ -1,0 +1,188 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.buscaDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.inputBusca {
+background-color: white;
+color: black;
+
+}
+
+.modal {
+  background-color: #fff;
+  color: #111;
+  font-family: 'Georgia', serif;
+  width: 90%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.fechar {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fechar:hover {
+  color: #5a00a0;
+}
+
+.modal h2 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.livro {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+}
+
+
+.livro img {
+  width: 130px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.livro h3 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.livro p {
+  line-height: 1.65;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.livro p:first-of-type {
+  font-style: italic;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.livro a {
+  text-decoration: none;
+  color: #5a00a0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.livro a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transition: background-color 0.2s;
+}
+
+.livro a:hover {
+  color: #330066;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.paginacao button {
+  background-color: #5a00a0;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.paginacao button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginacao button:hover:not(:disabled) {
+  background-color: #3e007a;
+}
+
+@media (max-width: 768px) {
+  .livro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .livro img {
+    width: 110px;
+  }
+
+  .livro h3 {
+    font-size: 1.4rem;
+  }
+
+  .livro p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .livro p {
+    font-size: 0.95rem;
+  }
+}
+
+.info {
+  max-width: 730px;
+}
+
